@@ -1,0 +1,36 @@
+// this file does the actual styling of the elements
+@import "variables.less";
+@import "mixins.less";
+
+
+/// sample assigments from my own customization
+#post-series {
+  background-color: @color_background;
+  .boxborder-styling(@color_reduced, 1px);
+}
+#post-series-title {
+  color: @color_reduced;
+  font-size: 1.077em;
+  font-weight: bold;
+  background-color: @color_background;
+  border: 0;
+  margin: 0 -25px 0px;
+}
+.theme-heading {
+  color: #05688E;
+}
+.theme-heading span.text:after {
+  content: "";
+  border-bottom-width: 0;
+}
+#post-series li {
+  padding: 7px 0; border-bottom: 0px solid #eee;
+}
+#post-series .post-series-count {
+  color: #05688E;
+}
+#post-series .post-series-current, #post-series .post-series-current .post-series-count {
+  text-decoration: line-through;
+  color: #05688E;
+
+}

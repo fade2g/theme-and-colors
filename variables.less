@@ -1,0 +1,24 @@
+// the base colors without eny semantics
+@color_primary_1: #FF8500;
+@color_primary_2: #E37600;
+@color_primary_3: #9D601E;
+@color_primary_4: #604325;
+@color_primary_5: #14100C;
+
+@color_secondary_1: #01A1DE;
+@color_secondary_2: #05688E;
+@color_secondary_3: #164E63;
+@color_secondary_4: #19323C;
+@color_secondary_5: #080B0C;
+
+// color definitions mapped to semantics
+// use these values to assign to elements in the style sheet
+// This provides another level of abstraction: To the various css selectors
+// you will assign "color_header" to all headers and
+// eventually "color_sidebar_header" to all headers in the sidebar.
+
+@color_background: @color_secondary_4; // color for various backgrounds
+@color_main: @color_primary_2;         // color for all main elements, i.e. titles and texts
+@color_main_highlighted = @color_primary_1  // highlighet color of the above (i.e. hover of links
+@color_reduced: @color_secondary_2;    // color for side elements and elements that are not the main sontent (i.e. metadata, category buttons and stuff
+@color_reduced_highlighted: @color_secondary_1;    // highlighted color for side elements

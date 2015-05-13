@@ -1,0 +1,9 @@
+// this file defines some generic mixins
+
+// mixin to style the border of a box
+// i.e. I just want lines to and bottom
+.boxborder-styling(@color, @width) {
+  border-width: @width 0 @width 0;
+  border-color: @color;
+  padding: 0;
+}
