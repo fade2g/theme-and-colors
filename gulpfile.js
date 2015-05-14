@@ -3,43 +3,17 @@
 
 var gulp = require('gulp');
 
-var static_files_root = 'app/client';
-var static_bower_root = 'app/bower_components';
-var static_bower_fontawsome_root = 'app/bower_components/font-awesome/fonts';
+var styles_root = '.';
 
 // load plugins
 var $ = require('gulp-load-plugins')();
 
-/* starting express server
- *  see http://rhumaric.com/2014/01/livereload-magic-gulp-style/
- *  TODO: Continue with tutorial
- */
-function startExpress() {
-    var express = require('express');
-    var app = express();
-    app.use(express.static(__dirname));
-    app.listen(4000);
-}
-
 gulp.task('styles', function () {
-    return gulp.src(static_files_root + '/styles/main.less')
+    return gulp.src(styles_root + '/custom.less')
         .pipe($.less())
         .pipe($.autoprefixer('last 1 version'))
-        .pipe(gulp.dest('.tmp/styles'))
-        .pipe($.size());
-});
-
-gulp.task('copy-fonts', function () {
-    return gulp.src(static_bower_root + '/font-awesome/fonts/*')
-        .pipe(gulp.dest('.tmp/fonts'))
-        .pipe($.size());
-});
-
-gulp.task('scripts', function () {
-    return gulp.src(static_files_root + '/scripts/**/*.js')
-        .pipe($.jshint())
-        .pipe($.jshint.reporter(require('jshint-stylish')))
-        .pipe($.size());
+        .pipe($.size())
+        .pipe(gulp.dest(styles_root));
 });
 
 gulp.task('html', ['styles','copy-fonts', 'scripts'], function () {
