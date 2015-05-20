@@ -15,9 +15,9 @@ gulp.task('styles', function () {
         .pipe(less())
         .pipe(autoprefixer('last 1 version'))
         .pipe(size())
-        .pipe(gulp.dest(styles_root))
+        .pipe(gulp.dest(styles_root));
 });
 
-gulp.task('watch', function() {
-   gulp.watch('./*.less', ['styles'])
+gulp.task('watch', function () {
+    gulp.watch('./*.less', ['styles']);
 });
